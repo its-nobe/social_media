@@ -1,9 +1,8 @@
 .App {
-	width: 100vw;
+	width: 100%;
 	height: auto;
 	display: flex;
 	align-items: center;
-	padding-top: 40px;
 	flex-direction: column;
 }
 
@@ -19,30 +18,29 @@ body {
 	display: flex;
 	flex-direction: column;
 	margin-top: 50px;
-	border: 1px solid purple;
+	border: 1px solid lightgray;
 	font-family: Arial, Helvetica, sans-serif;
-	box-shadow: rgba(143, 39, 156, 0.596) 0px 2px 8px 0px;
+
+	box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .post:hover {
-	box-shadow: rgba(143, 39, 156, 0.596) 0px 7px 29px 0px;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 	cursor: pointer;
 }
-
 .post .title {
 	flex: 20%;
 	border-bottom: 1px solid lightgray;
-	background-color: peachpuff;
+	background-color: dodgerblue;
 	display: grid;
 	place-content: center;
-	color: black;
+	color: white;
 }
 
 .post .body {
 	flex: 60%;
 	display: grid;
 	place-content: center;
-	color: grey;
 }
 
 .post .footer {
@@ -51,8 +49,8 @@ body {
 	display: flex;
 	align-items: center;
 	padding-left: 15px;
-	background-color: peachpuff;
-	color: black;
+	background-color: dodgerblue;
+	color: white;
 	border-bottom-left-radius: 10px;
 	border-bottom-right-radius: 10px;
 }
@@ -74,7 +72,7 @@ body {
 	width: 500px;
 	height: auto;
 	padding: 20px;
-	border: 5px solid rgba(143, 39, 156, 0.596);
+	border: 5px solid dodgerblue;
 	border-radius: 5px;
 }
 
@@ -82,7 +80,7 @@ body {
 	height: 40px;
 	margin-top: 10px;
 	margin-bottom: 10px;
-	border: 2px solid lightslategrey;
+	border: 2px solid grey;
 	border-radius: 5px;
 	padding-left: 10px;
 	font-size: 20px;
@@ -92,14 +90,14 @@ body {
 	margin-top: 15px;
 	height: 40px;
 	border: none;
-	background-color: pink;
+	background-color: lightskyblue;
 	border-radius: 5px;
-	color: grey;
+	color: white;
 }
 
 .formContainer button:hover {
 	cursor: pointer;
-	background-color: lightpink;
+	background-color: dodgerblue;
 }
 
 span {
@@ -111,16 +109,44 @@ span {
 .navbar {
 	width: 100%;
 	height: 70px;
-	background-color: lightgray;
+	background-color: dodgerblue;
 	display: flex;
 	align-items: center;
 	font-family: Arial, Helvetica, sans-serif;
 }
+.navbar .links {
+	flex: 50%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
 
+.navbar .loggedInContainer {
+	flex: 50%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+}
 .navbar a {
 	margin-left: 20px;
 	text-decoration: none;
-	color: black;
+	color: white;
+}
+
+.navbar button {
+	width: 100px;
+	height: 40px;
+	cursor: pointer;
+	margin-right: 10px;
+	background-color: white;
+}
+
+.navbar h1 {
+	text-align: right;
+	margin-right: 10px;
+	color: white;
+	font-weight: lighter;
 }
 
 /* INDIVIDUAL POST */
@@ -226,7 +252,6 @@ button {
 .loginContainer button {
 	background-color: dodgerblue;
 	color: white;
-	cursor: pointer;
 }
 
 .loginContainer input {
