@@ -17,6 +17,8 @@ const usersRouter = require("./routes/Users");
 app.use("/auth", usersRouter);
 const likesRouter = require("./routes/Likes");
 app.use("/likes", likesRouter);
+const clikesRouter = require("./routes/CLikes");
+app.use("/clikes", clikesRouter);
 
 db.sequelize.sync().then(() => {
   app.listen(1001, () => {
