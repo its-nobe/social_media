@@ -1,27 +1,38 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { AuthContext } from "../helpers/AuthContext";
 
 function CreatePost() {
+	const { authState } = useContext(AuthContext);
+
 	let history = useHistory();
 	const initialValues = {
 		title: "",
 		postText: "",
-		username: "",
 	};
+
+	useEffect(() => {
+		if (!localStorage.getItem("accessToken")) {
+			history.push("/login");
+		}
+	}, []);
 
 	const validationSchema = Yup.object().shape({
 		title: Yup.string().required("Title please!!"),
 		postText: Yup.string().required(),
-		username: Yup.string().min(3).max(15).required(),
 	});
 
 	const onSubmit = (data) => {
-		axios.post("http://localhost:1001/posts", data).then((response) => {
-			history.push("/");
-		});
+		axios
+			.post("http://localhost:1001/posts", data, {
+				headers: { accessToken: localStorage.getItem("accessToken") },
+			})
+			.then((response) => {
+				history.push("/");
+			});
 	};
 
 	return (
@@ -48,14 +59,7 @@ function CreatePost() {
 						name="postText"
 						placeholder="( Ex. Post....)"
 					/>
-					<label>Username: </label>
-					<ErrorMessage name="username" component="span" />
-					<Field
-						autocomplete="off"
-						id="inputCreatePost"
-						name="username"
-						placeholder="( Ex. nobe....)"
-					/>
+
 					<button type="submit">CreatePost</button>
 				</Form>
 			</Formik>
