@@ -2,7 +2,8 @@
 use social_media;
 delimiter $
 CREATE TRIGGER welcome 
-AFTER INSERT ON users 
+AFTER INSERT
+ON users 
 FOR EACH ROW 
 BEGIN
 INSERT INTO posts(id, title, postText, username, createdAt, updatedAt, UserId) 
