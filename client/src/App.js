@@ -13,6 +13,10 @@ import { AuthContext } from "./helpers/AuthContext";
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+</style>
+
 function App() {
 	const [authState, setAuthState] = useState({
 		username: "",
@@ -62,7 +66,11 @@ function App() {
 									<Link to="/createpost"> New Post </Link>
 								</>
 							)}
+							<h1 className="s_name">
+								<b>TriloG</b>
+							</h1>
 						</div>
+
 						<div className="loggedInContainer">
 							<h1> {authState.username} </h1>
 							{authState.status && <button onClick={logout}> Sign Out</button>}
