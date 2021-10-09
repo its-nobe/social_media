@@ -17,6 +17,8 @@ delimiter ;
 
 -- function
 
+use social_media;
+delimiter $
 CREATE FUNCTION `top_post` ()
 RETURNS INTEGER
 DETERMINISTIC
@@ -25,6 +27,6 @@ DECLARE top_postId INTEGER;
 SELECT postId INTO top_postId FROM social_media.likes GROUP BY postId ORDER BY count(id) desc limit 1;
 RETURN top_postId;
 END
-
+delimiter ;
 
 ```
