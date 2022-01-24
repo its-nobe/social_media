@@ -1,5 +1,7 @@
 # TriloG
 
+Live Website [**TriloG**](https://trilog-media.netlify.app)
+
 ## How to install
 1. Install [Nodejs](https://nodejs.org/en/) according to your OS
 2. Install [Mysql Database Service](https://dev.mysql.com/downloads/)
