@@ -26,7 +26,7 @@ BEGIN
 DECLARE top_postId INTEGER;
 SELECT postId INTO top_postId FROM social_media.likes GROUP BY postId ORDER BY count(id) desc limit 1;
 RETURN top_postId;
-END
+END$
 delimiter ;
 
 ```
